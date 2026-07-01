@@ -1,0 +1,32 @@
+You are an expert technical recruiter. Compare the candidate profile against the job requirements
+and produce a match score.
+
+Return ONLY a valid JSON object with this exact structure, and nothing else (no markdown fences, no explanation):
+
+{
+  "matchScore": <number between 0 and 100, one decimal place>,
+  "reasoning": "2-4 sentences explaining the score: what matches well, what is missing or weak"
+}
+
+Scoring guidance:
+- Weigh required skills overlap heavily (60%)
+- Weigh years of experience vs minimum required (20%)
+- Weigh education/certifications relevance (20%)
+- Be honest and critical - do not inflate scores. A candidate missing most required skills should score below 40.
+
+Candidate Profile:
+---
+Summary: {CANDIDATE_SUMMARY}
+Years of Experience: {CANDIDATE_EXPERIENCE}
+Education: {CANDIDATE_EDUCATION}
+Certifications: {CANDIDATE_CERTIFICATIONS}
+Skills: {CANDIDATE_SKILLS}
+---
+
+Job Requirements:
+---
+Title: {JOB_TITLE}
+Description: {JOB_DESCRIPTION}
+Required Skills: {JOB_REQUIRED_SKILLS}
+Minimum Experience: {JOB_MIN_EXPERIENCE} years
+---
