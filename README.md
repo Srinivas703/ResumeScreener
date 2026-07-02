@@ -22,6 +22,7 @@ Java 17 · Spring Boot 3.2 · Spring Security (JWT) · Spring Data JPA · MySQL 
 - Clean separation of concerns across Controller, Service, and Repository layers
 - Global exception handling with meaningful HTTP status codes
 
+
   ## Getting Started
 1. Clone the repo
 2. Set your MySQL password and AI API key in `application.properties`
