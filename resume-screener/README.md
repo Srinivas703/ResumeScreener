@@ -145,5 +145,51 @@ curl -X POST http://localhost:8080/api/candidates/resume \
 - Async processing (Spring `@Async` or a queue) for bulk resume uploads
 - Dockerfile + docker-compose for one-command local setup
 
-## Author
-**Srinivas** — [GitHub](https://github.com/Srinivas703) · [LinkedIn](https://linkedin.com/in/Srinu70)
+Project Structure
+resume-screener/
+├── src/main/java/com/srinivas/resumescreener/
+│   ├── ResumeScreenerApplication.java   # Main entry point
+│   │
+│   ├── config/                          # App-level configuration
+│   │   ├── SecurityConfig.java          # Spring Security + JWT setup
+│   │   ├── AiClientConfig.java          # RestTemplate bean for LLM API calls
+│   │   └── SwaggerConfig.java           # OpenAPI/Swagger docs config
+│   │
+│   ├── controller/                      # REST API endpoints
+│   │   ├── AuthController.java          # Register / login
+│   │   ├── CandidateController.java     # Resume upload, candidate profile
+│   │   ├── JobController.java           # Job posting management
+│   │   └── MatchController.java         # AI-driven match scoring
+│   │
+│   ├── service/                         # Business logic
+│   │   ├── AuthService.java
+│   │   ├── ResumeParserService.java     # PDF text extraction (PDFBox)
+│   │   ├── AiExtractionService.java     # LLM calls: resume parsing + match scoring
+│   │   ├── CandidateService.java
+│   │   ├── JobService.java
+│   │   └── MatchingService.java
+│   │
+│   ├── repository/                      # Spring Data JPA repositories
+│   │   ├── UserRepository.java
+│   │   ├── CandidateRepository.java
+│   │   ├── JobRepository.java
+│   │   └── MatchResultRepository.java
+│   │
+│   ├── entity/                          # Database models
+│   │   ├── User.java
+│   │   ├── Candidate.java
+│   │   ├── JobPosting.java
+│   │   ├── ExtractedSkill.java
+│   │   └── MatchResult.java
+│   │
+│   ├── dto/                             # Request/response objects
+│   ├── security/                        # JWT filter, token utils, user details
+│   └── exception/                       # Global exception handling
+│
+├── src/main/resources/
+│   ├── application.properties           # DB, JWT, and AI provider config
+│   └── prompts/                         # LLM prompt templates
+│       ├── extraction-prompt-template.txt
+│       └── matching-prompt-template.txt
+│
+└── pom.xml
