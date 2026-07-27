@@ -2,7 +2,6 @@
 
 A Spring Boot backend that parses resumes using AI and automatically scores candidates against job postings — built to demonstrate real LLM integration, not just CRUD operations.
 
-
 ## Features
 - 🔐 JWT-based authentication with role-based access (Candidate / Recruiter)
 - 📄 Resume upload and text extraction from PDF files (Apache PDFBox)
@@ -11,7 +10,7 @@ A Spring Boot backend that parses resumes using AI and automatically scores cand
 - 📊 Ranked candidate lists per job posting, and ranked job recommendations per candidate
 - 📚 Swagger/OpenAPI documentation for all endpoints
 - 🏗️ Clean layered architecture (Controller → Service → Repository) with centralized exception handling
-
+  
   ## Tech Stack
 Java 17 · Spring Boot 3.2 · Spring Security (JWT) · Spring Data JPA · MySQL · Apache PDFBox · OpenAI-compatible LLM API · Maven · Swagger/OpenAPI
 
